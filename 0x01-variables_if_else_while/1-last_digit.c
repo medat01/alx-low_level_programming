@@ -3,58 +3,26 @@
 #include <stdio.h>
 
 /**
- * main - Prints the last digit of a randomly generated number
- * and whether it is greater than 5, less than 6, or 0.
+ * main - entry point 
  *
- * Return: Always 0.
+ * Description: print the value of n status:
+ * 		geater than, is zero is not less than 6
+ *
+ * Return: 0 (success)
  */
+
 int main(void)
 {
-	int n;
+	int n, digit;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
+	digit = n % 10;
 
-	if ((n % 10) > 5)
-	{
-		printf("Last digit of %d is %d and is greater than 5\n",
-			n, n % 10);
-	}
-	else if ((n % 10) < 6 && (n % 10) != 0)
-	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n",
-			n, n % 10);
-	}
+	if (digit > 5)
+		printf("Last digit of %i is %i and is greater than 5\n", n, digit);
+	else if (digit == 0)
+		printf("Last digit of %i is %i and is 0\n", n, digit);
 	else
-	{
-		printf("Last digit of %d is %d and is 0\n",
-			n, n % 10);
-	}
-
+		printf("Last digit of %i is %i and is less than 6 and not  0\n", n, digit);
 	return (0);
-
-}
-
-
-2-print_alphabet.c
-
-#include <stdio.h>
-
-/**
- * main - Prints the alphabet.
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-	char alp[26] = "abcdefghijklmnopqrstuvwxyz";
-	int i;
-
-	for (i = 0; i < 26; i++)
-	{
-		putchar(alp[i]);
-	}
-	putchar('\n');
-	return (0);
-}
-
