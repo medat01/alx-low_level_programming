@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * updateValue - Updates the value pointed to by an integer pointer to 98.
